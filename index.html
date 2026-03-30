@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Women Cancer Patient Monitoring System</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-brand">
+    <i class="fas fa-ribbon"></i>
+    <span class="lang-en">Women Cancer Monitor</span>
+    <span class="lang-ta hidden">பெண்கள் புற்றுநோய் கண்காணிப்பு</span>
+    <span class="lang-hi hidden">महिला कैंसर निगरानी</span>
+  </div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home" class="lang-en">Home</a><a href="#home" class="lang-ta hidden">முகப்பு</a><a href="#home" class="lang-hi hidden">होम</a></li>
+    <li><a href="#about" class="lang-en">About</a><a href="#about" class="lang-ta hidden">பற்றி</a><a href="#about" class="lang-hi hidden">परिचय</a></li>
+    <li><a href="#monitoring" class="lang-en">Monitoring</a><a href="#monitoring" class="lang-ta hidden">கண்காணிப்பு</a><a href="#monitoring" class="lang-hi hidden">निगरानी</a></li>
+    <li><a href="#services" class="lang-en">Services</a><a href="#services" class="lang-ta hidden">சேவைகள்</a><a href="#services" class="lang-hi hidden">सेवाएं</a></li>
+    <li><a href="#stats" class="lang-en">Statistics</a><a href="#stats" class="lang-ta hidden">புள்ளிவிவரங்கள்</a><a href="#stats" class="lang-hi hidden">आंकड़े</a></li>
+    <li><a href="#contact" class="lang-en">Contact</a><a href="#contact" class="lang-ta hidden">தொடர்பு</a><a href="#contact" class="lang-hi hidden">संपर्क</a></li>
+  </ul>
+  <div class="nav-controls">
+    <div class="lang-dropdown">
+      <button class="btn-icon" id="langToggle" title="Language" aria-label="Toggle Language">
+        <i class="fas fa-language"></i>
+      </button>
+      <div class="lang-menu" id="langMenu">
+        <button onclick="setLang('en')">🇬🇧 English</button>
+        <button onclick="setLang('ta')">🇮🇳 தமிழ்</button>
+        <button onclick="setLang('hi')">🇮🇳 हिंदी</button>
+      </div>
+    </div>
+    <button class="btn-icon" id="darkToggle" title="Toggle Dark Mode" aria-label="Toggle Dark Mode">
+      <i class="fas fa-moon"></i>
+    </button>
+    <button class="btn-icon" id="fontToggle" title="Toggle Large Text" aria-label="Toggle Large Text">
+      <i class="fas fa-text-height"></i>
+    </button>
+    <button class="btn-icon hamburger" id="hamburger" aria-label="Menu">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- HOME / HERO -->
+<section id="home" class="hero">
+  <div class="hero-content animate-fade">
+    <h1 class="lang-en">Women Cancer Patient<br><span>Monitoring System</span></h1>
+    <h1 class="lang-ta hidden">பெண்கள் புற்றுநோய் நோயாளி<br><span>கண்காணிப்பு அமைப்பு</span></h1>
+    <h1 class="lang-hi hidden">महिला कैंसर रोगी<br><span>निगरानी प्रणाली</span></h1>
+    <p class="lang-en">A comprehensive platform for monitoring women cancer patients — tracking health metrics, treatment progress, and appointments in real time.</p>
+    <p class="lang-ta hidden">பெண்கள் புற்றுநோய் நோயாளிகளை கண்காணிக்கும் விரிவான தளம் — உடல்நல அளவீடுகள், சிகிச்சை முன்னேற்றம் மற்றும் சந்திப்புகளை நிகழ்நேரத்தில் கண்காணிக்கிறது.</p>
+    <p class="lang-hi hidden">महिला कैंसर रोगियों की निगरानी के लिए एक व्यापक मंच — स्वास्थ्य मेट्रिक्स, उपचार प्रगति और अपॉइंटमेंट को रियल टाइम में ट्रैक करता है।</p>
+    <div class="hero-btns">
+      <a href="#monitoring" class="btn-primary lang-en">Start Monitoring</a>
+      <a href="#monitoring" class="btn-primary lang-ta hidden">கண்காணிப்பை தொடங்கு</a>
+      <a href="#monitoring" class="btn-primary lang-hi hidden">निगरानी शुरू करें</a>
+      <a href="#monitoring" class="btn-outline lang-en">View Dashboard</a>
+      <a href="#monitoring" class="btn-outline lang-ta hidden">டாஷ்போர்டு பார்க்க</a>
+      <a href="#monitoring" class="btn-outline lang-hi hidden">डैशबोर्ड देखें</a>
+    </div>
+  </div>
+  <div class="hero-image animate-slide">
+    <div class="hero-img-placeholder">
+      <i class="fas fa-ribbon hero-icon"></i>
+      <div class="hero-circles">
+        <div class="circle c1"></div>
+        <div class="circle c2"></div>
+        <div class="circle c3"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="container">
+    <h2 class="section-title lang-en">About Cancer in Women</h2>
+    <h2 class="section-title lang-ta hidden">பெண்களில் புற்றுநோய் பற்றி</h2>
+    <h2 class="section-title lang-hi hidden">महिलाओं में कैंसर के बारे में</h2>
+    <p class="section-sub lang-en">Cancer is the uncontrolled growth of abnormal cells. In women, it can affect unique biological systems and carries distinct emotional and social burdens. Early detection is the most powerful tool we have.</p>
+    <p class="section-sub lang-ta hidden">புற்றுநோய் என்பது அசாதாரண செல்களின் கட்டுப்பாடற்ற வளர்ச்சி. ஆரம்ப கண்டறிதல் மிக முக்கியமான கருவி.</p>
+    <p class="section-sub lang-hi hidden">कैंसर असामान्य कोशिकाओं की अनियंत्रित वृद्धि है। प्रारंभिक पहचान सबसे शक्तिशाली उपकरण है।</p>
+    <div class="cards-grid">
+      <div class="card animate-up">
+        <div class="card-icon pink"><i class="fas fa-heart"></i></div>
+        <h3 class="lang-en">Breast Cancer</h3><h3 class="lang-ta hidden">மார்பக புற்றுநோய்</h3><h3 class="lang-hi hidden">स्तन कैंसर</h3>
+        <p class="lang-en">The most common cancer in women worldwide. Early detection through mammograms significantly improves survival rates to nearly 99%.</p>
+        <p class="lang-ta hidden">உலகளவில் பெண்களில் மிகவும் பொதுவான புற்றுநோய். மேமோகிராம் மூலம் ஆரம்ப கண்டறிதல் உயிர்வாழ்வை மேம்படுத்துகிறது.</p>
+        <p class="lang-hi hidden">दुनिया भर में महिलाओं में सबसे आम कैंसर। मैमोग्राम से जल्दी पता लगाने से जीवित रहने की दर लगभग 99% तक बढ़ जाती है।</p>
+      </div>
+      <div class="card animate-up">
+        <div class="card-icon purple"><i class="fas fa-female"></i></div>
+        <h3 class="lang-en">Cervical Cancer</h3><h3 class="lang-ta hidden">கர்ப்பப்பை வாய் புற்றுநோய்</h3><h3 class="lang-hi hidden">गर्भाशय ग्रीवा कैंसर</h3>
+        <p class="lang-en">Largely preventable through HPV vaccination and regular Pap smear screenings. Affects the cervix of the uterus.</p>
+        <p class="lang-ta hidden">HPV தடுப்பூசி மற்றும் பாப் ஸ்மியர் மூலம் தடுக்கலாம்.</p>
+        <p class="lang-hi hidden">HPV टीकाकरण और नियमित पैप स्मीयर से काफी हद तक रोका जा सकता है।</p>
+      </div>
+      <div class="card animate-up">
+        <div class="card-icon blue"><i class="fas fa-lungs"></i></div>
+        <h3 class="lang-en">Lung Cancer</h3><h3 class="lang-ta hidden">நுரையீரல் புற்றுநோய்</h3><h3 class="lang-hi hidden">फेफड़े का कैंसर</h3>
+        <p class="lang-en">A leading cause of cancer death in women. Smoking and air pollution are major risk factors. Early symptoms are often subtle.</p>
+        <p class="lang-ta hidden">பெண்களில் புற்றுநோய் மரணத்தின் முக்கிய காரணம். புகைபிடித்தல் மற்றும் காற்று மாசு முக்கிய ஆபத்து காரணிகள்.</p>
+        <p class="lang-hi hidden">महिलाओं में कैंसर से मृत्यु का प्रमुख कारण। धूम्रपान और वायु प्रदूषण प्रमुख जोखिम कारक हैं।</p>
+      </div>
+      <div class="card animate-up">
+        <div class="card-icon rose"><i class="fas fa-circle-dot"></i></div>
+        <h3 class="lang-en">Ovarian Cancer</h3><h3 class="lang-ta hidden">கருப்பை புற்றுநோய்</h3><h3 class="lang-hi hidden">डिम्बग्रंथि कैंसर</h3>
+        <p class="lang-en">Often called the "silent killer" due to vague symptoms. Regular check-ups and awareness of family history are crucial.</p>
+        <p class="lang-ta hidden">"அமைதியான கொலையாளி" என்று அழைக்கப்படுகிறது. குடும்ப வரலாறு மற்றும் வழக்கமான பரிசோதனைகள் முக்கியம்.</p>
+        <p class="lang-hi hidden">"साइलेंट किलर" कहा जाता है। नियमित जांच और पारिवारिक इतिहास की जागरूकता महत्वपूर्ण है।</p>
+      </div>
+    </div>
+    <div class="early-detection-banner animate-up">
+      <i class="fas fa-shield-heart"></i>
+      <div>
+        <h3 class="lang-en">Why Early Detection Matters</h3>
+        <h3 class="lang-ta hidden">ஆரம்ப கண்டறிதல் ஏன் முக்கியம்</h3>
+        <h3 class="lang-hi hidden">प्रारंभिक पहचान क्यों महत्वपूर्ण है</h3>
+        <p class="lang-en">When breast cancer is detected early (Stage I), the 5-year survival rate is nearly 99%. Regular screenings, self-exams, and knowing your body can save your life.</p>
+        <p class="lang-ta hidden">மார்பக புற்றுநோய் ஆரம்பத்திலேயே கண்டறியப்படும்போது, 5 ஆண்டு உயிர்வாழ்வு விகிதம் கிட்டத்தட்ட 99% ஆகும்.</p>
+        <p class="lang-hi hidden">जब स्तन कैंसर का जल्दी पता चलता है (चरण I), तो 5 साल की जीवित रहने की दर लगभग 99% होती है।</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MONITORING DASHBOARD -->
+<section id="monitoring" class="section alt-bg">
+  <div class="container">
+    <h2 class="section-title lang-en">Patient Monitoring Dashboard</h2>
+    <h2 class="section-title lang-ta hidden">நோயாளி கண்காணிப்பு டாஷ்போர்டு</h2>
+    <h2 class="section-title lang-hi hidden">रोगी निगरानी डैशबोर्ड</h2>
+    <p class="section-sub lang-en">Real-time health tracking for Priya Sharma — Breast Cancer Stage II</p>
+    <p class="section-sub lang-ta hidden">பிரியா சர்மாவிற்கான நிகழ்நேர உடல்நல கண்காணிப்பு — மார்பக புற்றுநோய் நிலை II</p>
+    <p class="section-sub lang-hi hidden">प्रिया शर्मा के लिए रियल-टाइम स्वास्थ्य ट्रैकिंग — स्तन कैंसर चरण II</p>
+
+    <!-- Patient Card -->
+    <div class="patient-card animate-up">
+      <div class="patient-avatar"><i class="fas fa-user-nurse"></i></div>
+      <div class="patient-info">
+        <h3>Priya Sharma</h3>
+        <div class="patient-meta">
+          <span><i class="fas fa-birthday-cake"></i> Age: 45</span>
+          <span><i class="fas fa-ribbon"></i> Breast Cancer</span>
+          <span><i class="fas fa-layer-group"></i> Stage II</span>
+          <span><i class="fas fa-user-md"></i> Dr. Meena</span>
+          <span class="status-badge active">Active Treatment</span>
+        </div>
+      </div>
+      <div class="patient-id">ID: WC-2024-0047</div>
+    </div>
+
+    <!-- Health Metrics -->
+    <div class="metrics-grid">
+      <div class="metric-card animate-up">
+        <div class="metric-icon heart"><i class="fas fa-heart-pulse"></i></div>
+        <div class="metric-value">78 <span>bpm</span></div>
+        <div class="metric-label lang-en">Heart Rate</div>
+        <div class="metric-label lang-ta hidden">இதய துடிப்பு</div>
+        <div class="metric-label lang-hi hidden">हृदय गति</div>
+        <div class="metric-status normal">Normal</div>
+      </div>
+      <div class="metric-card animate-up">
+        <div class="metric-icon bp"><i class="fas fa-gauge-high"></i></div>
+        <div class="metric-value">120<span>/80</span></div>
+        <div class="metric-label lang-en">Blood Pressure</div>
+        <div class="metric-label lang-ta hidden">இரத்த அழுத்தம்</div>
+        <div class="metric-label lang-hi hidden">रक्तचाप</div>
+        <div class="metric-status normal">Normal</div>
+      </div>
+      <div class="metric-card animate-up">
+        <div class="metric-icon spo2"><i class="fas fa-lungs"></i></div>
+        <div class="metric-value">98<span>%</span></div>
+        <div class="metric-label lang-en">SpO2</div>
+        <div class="metric-label lang-ta hidden">ஆக்சிஜன் அளவு</div>
+        <div class="metric-label lang-hi hidden">SpO2</div>
+        <div class="metric-status normal">Excellent</div>
+      </div>
+      <div class="metric-card animate-up">
+        <div class="metric-icon temp"><i class="fas fa-thermometer-half"></i></div>
+        <div class="metric-value">98.6<span>°F</span></div>
+        <div class="metric-label lang-en">Temperature</div>
+        <div class="metric-label lang-ta hidden">வெப்பநிலை</div>
+        <div class="metric-label lang-hi hidden">तापमान</div>
+        <div class="metric-status normal">Normal</div>
+      </div>
+    </div>
+
+    <!-- Charts Row -->
+    <div class="charts-row">
+      <div class="chart-card animate-up">
+        <h4 class="lang-en">Heart Rate Trend (Last 7 Days)</h4>
+        <h4 class="lang-ta hidden">இதய துடிப்பு போக்கு (கடந்த 7 நாட்கள்)</h4>
+        <h4 class="lang-hi hidden">हृदय गति प्रवृत्ति (पिछले 7 दिन)</h4>
+        <canvas id="heartRateChart"></canvas>
+      </div>
+      <div class="chart-card animate-up">
+        <h4 class="lang-en">Blood Pressure Trend</h4>
+        <h4 class="lang-ta hidden">இரத்த அழுத்த போக்கு</h4>
+        <h4 class="lang-hi hidden">रक्तचाप प्रवृत्ति</h4>
+        <canvas id="bpChart"></canvas>
+      </div>
+    </div>
+    <div class="charts-row">
+      <div class="chart-card animate-up">
+        <h4 class="lang-en">SpO2 & Temperature Trend</h4>
+        <h4 class="lang-ta hidden">SpO2 & வெப்பநிலை போக்கு</h4>
+        <h4 class="lang-hi hidden">SpO2 और तापमान प्रवृत्ति</h4>
+        <canvas id="spo2Chart"></canvas>
+      </div>
+      <div class="chart-card animate-up">
+        <h4 class="lang-en">Treatment Progress</h4>
+        <h4 class="lang-ta hidden">சிகிச்சை முன்னேற்றம்</h4>
+        <h4 class="lang-hi hidden">उपचार प्रगति</h4>
+        <canvas id="treatmentChart"></canvas>
+      </div>
+    </div>
+
+    <!-- Treatment Tracker -->
+    <div class="tracker-grid">
+      <div class="tracker-card animate-up">
+        <h4 class="lang-en"><i class="fas fa-pills"></i> Treatment Tracker</h4>
+        <h4 class="lang-ta hidden"><i class="fas fa-pills"></i> சிகிச்சை கண்காணிப்பு</h4>
+        <h4 class="lang-hi hidden"><i class="fas fa-pills"></i> उपचार ट्रैकर</h4>
+        <div class="treatment-list">
+          <div class="treatment-item done"><i class="fas fa-check-circle"></i><span>Chemotherapy Cycle 1</span><span class="t-date">Jan 10</span></div>
+          <div class="treatment-item done"><i class="fas fa-check-circle"></i><span>Chemotherapy Cycle 2</span><span class="t-date">Feb 7</span></div>
+          <div class="treatment-item done"><i class="fas fa-check-circle"></i><span>Chemotherapy Cycle 3</span><span class="t-date">Mar 6</span></div>
+          <div class="treatment-item active"><i class="fas fa-spinner fa-spin"></i><span>Chemotherapy Cycle 4</span><span class="t-date">Apr 3</span></div>
+          <div class="treatment-item pending"><i class="fas fa-clock"></i><span>Radiation Therapy</span><span class="t-date">May 1</span></div>
+          <div class="treatment-item pending"><i class="fas fa-clock"></i><span>Hormone Therapy</span><span class="t-date">Jun 15</span></div>
+        </div>
+        <div class="progress-bar-wrap">
+          <div class="progress-label lang-en">Overall Progress: 58%</div>
+          <div class="progress-bar-track"><div class="progress-bar-fill" style="width:58%"></div></div>
+        </div>
+      </div>
+      <div class="tracker-card animate-up">
+        <h4 class="lang-en"><i class="fas fa-calendar-check"></i> Appointment Tracker</h4>
+        <h4 class="lang-ta hidden"><i class="fas fa-calendar-check"></i> சந்திப்பு கண்காணிப்பு</h4>
+        <h4 class="lang-hi hidden"><i class="fas fa-calendar-check"></i> अपॉइंटमेंट ट्रैकर</h4>
+        <div class="appointment-list">
+          <div class="appt-item past"><div class="appt-date">Mar 15</div><div class="appt-info"><strong>Oncology Review</strong><span>Dr. Meena — Completed</span></div></div>
+          <div class="appt-item past"><div class="appt-date">Mar 22</div><div class="appt-info"><strong>Blood Work</strong><span>Lab — Completed</span></div></div>
+          <div class="appt-item upcoming"><div class="appt-date">Apr 3</div><div class="appt-info"><strong>Chemo Cycle 4</strong><span>Dr. Meena — Upcoming</span></div></div>
+          <div class="appt-item upcoming"><div class="appt-date">Apr 18</div><div class="appt-info"><strong>MRI Scan</strong><span>Radiology — Upcoming</span></div></div>
+          <div class="appt-item upcoming"><div class="appt-date">May 1</div><div class="appt-info"><strong>Radiation Planning</strong><span>Dr. Meena — Scheduled</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="section">
+  <div class="container">
+    <h2 class="section-title lang-en">Our Services</h2>
+    <h2 class="section-title lang-ta hidden">எங்கள் சேவைகள்</h2>
+    <h2 class="section-title lang-hi hidden">हमारी सेवाएं</h2>
+    <div class="services-tabs">
+      <button class="tab-btn active" data-tab="appointment"><i class="fas fa-calendar-check"></i> <span class="lang-en">Appointment</span><span class="lang-ta hidden">சந்திப்பு</span><span class="lang-hi hidden">अपॉइंटमेंट</span></button>
+      <button class="tab-btn" data-tab="resources"><i class="fas fa-book-open"></i> <span class="lang-en">Resources</span><span class="lang-ta hidden">வளங்கள்</span><span class="lang-hi hidden">संसाधन</span></button>
+      <button class="tab-btn" data-tab="support"><i class="fas fa-hands-holding-heart"></i> <span class="lang-en">Support</span><span class="lang-ta hidden">ஆதரவு</span><span class="lang-hi hidden">सहायता</span></button>
+      <button class="tab-btn" data-tab="chat"><i class="fas fa-comments"></i> <span class="lang-en">Chat Help</span><span class="lang-ta hidden">அரட்டை</span><span class="lang-hi hidden">चैट</span></button>
+    </div>
+    <div class="tab-content active" id="tab-appointment">
+      <h3 class="lang-en">Book an Appointment</h3>
+      <h3 class="lang-ta hidden">சந்திப்பை பதிவு செய்யுங்கள்</h3>
+      <h3 class="lang-hi hidden">अपॉइंटमेंट बुक करें</h3>
+      <form class="service-form" id="appointmentForm">
+        <div class="form-row">
+          <input type="text" placeholder="Full Name" required aria-label="Full Name" />
+          <input type="email" placeholder="Email Address" required aria-label="Email" />
+        </div>
+        <div class="form-row">
+          <input type="tel" placeholder="Phone Number" required aria-label="Phone" />
+          <input type="date" required aria-label="Preferred Date" />
+        </div>
+        <select required aria-label="Service Type">
+          <option value="">Select Service Type</option>
+          <option>Breast Cancer Screening</option>
+          <option>Cervical Cancer Screening</option>
+          <option>General Consultation</option>
+          <option>Follow-up Visit</option>
+          <option>Chemotherapy Session</option>
+        </select>
+        <textarea placeholder="Additional notes (optional)" rows="3" aria-label="Notes"></textarea>
+        <button type="submit" class="btn-primary lang-en">Book Appointment</button>
+        <button type="submit" class="btn-primary lang-ta hidden">சந்திப்பை பதிவு செய்</button>
+        <button type="submit" class="btn-primary lang-hi hidden">अपॉइंटमेंट बुक करें</button>
+      </form>
+    </div>
+    <div class="tab-content" id="tab-resources">
+      <h3 class="lang-en">Educational Resources</h3>
+      <h3 class="lang-ta hidden">கல்வி வளங்கள்</h3>
+      <h3 class="lang-hi hidden">शैक्षिक संसाधन</h3>
+      <div class="resource-list">
+        <a href="#" class="resource-item"><i class="fas fa-file-pdf"></i><span>Understanding Breast Cancer — Guide</span></a>
+        <a href="#" class="resource-item"><i class="fas fa-video"></i><span>Early Detection Video Series</span></a>
+        <a href="#" class="resource-item"><i class="fas fa-file-pdf"></i><span>HPV Vaccination Facts</span></a>
+        <a href="#" class="resource-item"><i class="fas fa-video"></i><span>Survivor Stories — Inspiring Journeys</span></a>
+        <a href="#" class="resource-item"><i class="fas fa-book"></i><span>Nutrition & Cancer Prevention</span></a>
+        <a href="#" class="resource-item"><i class="fas fa-file-pdf"></i><span>Chemotherapy: What to Expect</span></a>
+      </div>
+    </div>
+    <div class="tab-content" id="tab-support">
+      <h3 class="lang-en">Support Community</h3>
+      <h3 class="lang-ta hidden">ஆதரவு சமூகம்</h3>
+      <h3 class="lang-hi hidden">सहायता समुदाय</h3>
+      <p class="lang-en" style="color:var(--text-muted);margin-bottom:1.5rem;">You are not alone. Join thousands of women sharing their journeys, strength, and hope.</p>
+      <div class="support-grid">
+        <div class="support-card"><i class="fas fa-users"></i><h4>Online Support Groups</h4><p>Weekly virtual meetups for survivors and caregivers.</p></div>
+        <div class="support-card"><i class="fas fa-phone"></i><h4>Counseling Helpline</h4><p>Speak with a trained counselor anytime.</p></div>
+        <div class="support-card"><i class="fas fa-heart"></i><h4>Caregiver Support</h4><p>Resources and guidance for family members.</p></div>
+      </div>
+    </div>
+    <div class="tab-content" id="tab-chat">
+      <h3 class="lang-en">Chat & Help Support</h3>
+      <h3 class="lang-ta hidden">அரட்டை & உதவி</h3>
+      <h3 class="lang-hi hidden">चैट और सहायता</h3>
+      <div class="chat-box">
+        <div class="chat-messages" id="chatMessages">
+          <div class="chat-msg bot"><i class="fas fa-robot"></i> <span class="lang-en">Hello! How can I help you today? Ask me about symptoms, screenings, or support.</span><span class="lang-ta hidden">வணக்கம்! இன்று நான் உங்களுக்கு எப்படி உதவலாம்?</span><span class="lang-hi hidden">नमस्ते! आज मैं आपकी कैसे मदद कर सकता हूं?</span></div>
+        </div>
+        <div class="chat-input-row">
+          <input type="text" id="chatInput" placeholder="Type your question..." aria-label="Chat input" />
+          <button onclick="sendChat()" class="btn-primary" aria-label="Send"><i class="fas fa-paper-plane"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATISTICS -->
+<section id="stats" class="section stats-section">
+  <div class="container">
+    <h2 class="section-title lang-en">Key Statistics</h2>
+    <h2 class="section-title lang-ta hidden">முக்கிய புள்ளிவிவரங்கள்</h2>
+    <h2 class="section-title lang-hi hidden">प्रमुख आंकड़े</h2>
+    <div class="stats-grid">
+      <div class="stat-card animate-up">
+        <i class="fas fa-globe"></i>
+        <div class="stat-number" data-target="2300000">0</div>
+        <p class="lang-en">New breast cancer cases globally per year</p>
+        <p class="lang-ta hidden">உலகளவில் ஆண்டுதோறும் மார்பக புற்றுநோய் வழக்குகள்</p>
+        <p class="lang-hi hidden">प्रति वर्ष वैश्विक स्तर पर नए स्तन कैंसर के मामले</p>
+      </div>
+      <div class="stat-card animate-up">
+        <i class="fas fa-percent"></i>
+        <div class="stat-number" data-target="99">0</div>
+        <p class="lang-en">% survival rate with early breast cancer detection</p>
+        <p class="lang-ta hidden">% ஆரம்ப கண்டறிதலுடன் உயிர்வாழ்வு விகிதம்</p>
+        <p class="lang-hi hidden">% प्रारंभिक स्तन कैंसर पहचान के साथ जीवित रहने की दर</p>
+      </div>
+      <div class="stat-card animate-up">
+        <i class="fas fa-users"></i>
+        <div class="stat-number" data-target="604000">0</div>
+        <p class="lang-en">Women die from breast cancer each year</p>
+        <p class="lang-ta hidden">ஒவ்வொரு ஆண்டும் மார்பக புற்றுநோயால் இறக்கும் பெண்கள்</p>
+        <p class="lang-hi hidden">हर साल स्तन कैंसर से महिलाओं की मृत्यु</p>
+      </div>
+      <div class="stat-card animate-up">
+        <i class="fas fa-syringe"></i>
+        <div class="stat-number" data-target="90">0</div>
+        <p class="lang-en">% of cervical cancers preventable with HPV vaccine</p>
+        <p class="lang-ta hidden">% கர்ப்பப்பை வாய் புற்றுநோய்களை HPV தடுப்பூசியால் தடுக்கலாம்</p>
+        <p class="lang-hi hidden">% गर्भाशय ग्रीवा कैंसर HPV वैक्सीन से रोके जा सकते हैं</p>
+      </div>
+    </div>
+    <!-- Fact Cards -->
+    <div class="fact-cards">
+      <div class="fact-card animate-up"><i class="fas fa-ribbon"></i><p class="lang-en">Breast cancer is the most common cancer among women worldwide</p><p class="lang-ta hidden">மார்பக புற்றுநோய் உலகளவில் பெண்களிடையே மிகவும் பொதுவான புற்றுநோய்</p><p class="lang-hi hidden">स्तन कैंसर दुनिया भर में महिलाओं में सबसे आम कैंसर है</p></div>
+      <div class="fact-card animate-up"><i class="fas fa-microscope"></i><p class="lang-en">Early detection can increase survival rates by up to 5x compared to late-stage diagnosis</p><p class="lang-ta hidden">ஆரம்ப கண்டறிதல் உயிர்வாழ்வு விகிதத்தை 5 மடங்கு அதிகரிக்கலாம்</p><p class="lang-hi hidden">प्रारंभिक पहचान जीवित रहने की दर को 5 गुना तक बढ़ा सकती है</p></div>
+      <div class="fact-card animate-up"><i class="fas fa-earth-asia"></i><p class="lang-en">Over 7.8 million women are living with breast cancer diagnosed in the last 5 years</p><p class="lang-ta hidden">கடந்த 5 ஆண்டுகளில் 7.8 மில்லியனுக்கும் அதிகமான பெண்கள் மார்பக புற்றுநோயுடன் வாழ்கின்றனர்</p><p class="lang-hi hidden">7.8 मिलियन से अधिक महिलाएं पिछले 5 वर्षों में निदान किए गए स्तन कैंसर के साथ जी रही हैं</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="section">
+  <div class="container">
+    <h2 class="section-title lang-en">Frequently Asked Questions</h2>
+    <h2 class="section-title lang-ta hidden">அடிக்கடி கேட்கப்படும் கேள்விகள்</h2>
+    <h2 class="section-title lang-hi hidden">अक्सर पूछे जाने वाले प्रश्न</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">What are the early symptoms of breast cancer? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-a">Early symptoms include a new lump in the breast or underarm, thickening or swelling, skin irritation or dimpling, nipple pain or retraction, redness or flaky skin, and nipple discharge other than breast milk.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What age should I start cancer screenings? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-a">Most guidelines recommend starting breast cancer screenings at age 40, and cervical cancer screenings at age 21. Consult your doctor for personalized advice based on your family history.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Is breast cancer hereditary? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-a">About 5–10% of breast cancers are hereditary, linked to BRCA1/BRCA2 gene mutations. A family history increases risk, but most cases are not inherited.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How can I prevent cervical cancer? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-a">Get the HPV vaccine (recommended for ages 9–45), have regular Pap smears, practice safe sex, avoid smoking, and maintain a healthy immune system.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What lifestyle changes reduce cancer risk? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-a">Maintaining a healthy weight, eating a balanced diet rich in fruits and vegetables, exercising regularly, avoiding tobacco and alcohol, and getting regular screenings all significantly reduce risk.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section alt-bg">
+  <div class="container">
+    <h2 class="section-title lang-en">Contact Us</h2>
+    <h2 class="section-title lang-ta hidden">எங்களை தொடர்பு கொள்ளுங்கள்</h2>
+    <h2 class="section-title lang-hi hidden">हमसे संपर्क करें</h2>
+    <div class="contact-grid">
+      <form class="contact-form" id="contactForm">
+        <input type="text" placeholder="Your Name" required aria-label="Name" />
+        <input type="email" placeholder="Your Email" required aria-label="Email" />
+        <textarea placeholder="Your Message" rows="5" required aria-label="Message"></textarea>
+        <button type="submit" class="btn-primary lang-en">Send Message</button>
+        <button type="submit" class="btn-primary lang-ta hidden">செய்தி அனுப்பு</button>
+        <button type="submit" class="btn-primary lang-hi hidden">संदेश भेजें</button>
+      </form>
+      <div class="helpline-box">
+        <h3 class="lang-en">Helpline</h3>
+        <h3 class="lang-ta hidden">உதவி எண்</h3>
+        <h3 class="lang-hi hidden">हेल्पलाइन</h3>
+        <div class="helpline-item"><i class="fas fa-phone"></i><span>1800-XXX-XXXX (Toll Free)</span></div>
+        <div class="helpline-item"><i class="fas fa-envelope"></i><span>support@womencancer.org</span></div>
+        <div class="helpline-item"><i class="fas fa-clock"></i><span class="lang-en">Available 24/7</span><span class="lang-ta hidden">24/7 கிடைக்கும்</span><span class="lang-hi hidden">24/7 उपलब्ध</span></div>
+        <div class="helpline-item"><i class="fas fa-location-dot"></i><span class="lang-en">Nationwide Support Centers</span><span class="lang-ta hidden">தேசிய ஆதரவு மையங்கள்</span><span class="lang-hi hidden">राष्ट्रव्यापी सहायता केंद्र</span></div>
+        <div class="emergency-note lang-en">If you are in crisis, please call emergency services immediately.</div>
+        <div class="emergency-note lang-ta hidden">நெருக்கடியில் இருந்தால், உடனடியாக அவசர சேவைகளை அழைக்கவும்.</div>
+        <div class="emergency-note lang-hi hidden">यदि आप संकट में हैं, तो कृपया तुरंत आपातकालीन सेवाओं को कॉल करें।</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-brand"><i class="fas fa-ribbon"></i> Women Cancer Patient Monitoring System</div>
+    <p class="lang-en">Empowering women through knowledge, monitoring, and early action.</p>
+    <p class="lang-ta hidden">அறிவு, கண்காணிப்பு மற்றும் ஆரம்ப நடவடிக்கை மூலம் பெண்களை வலுப்படுத்துகிறோம்.</p>
+    <p class="lang-hi hidden">ज्ञान, निगरानी और प्रारंभिक कार्रवाई के माध्यम से महिलाओं को सशक्त बनाना।</p>
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#monitoring">Monitoring</a>
+      <a href="#services">Services</a>
+      <a href="#stats">Statistics</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <p class="footer-note">© 2026 Women Cancer Patient Monitoring System. For informational purposes only.</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
